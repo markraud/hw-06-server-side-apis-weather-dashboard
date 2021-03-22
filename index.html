@@ -8,15 +8,44 @@
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
     <title>Weather Dashboard</title>
 </head>
-<div class='container-fluid'>
-    <div class="jumbotron jumbotron-fluid ">
-        <h1 class="display-3 text-light bg-dark text-center">Weather Dashboard</h1>
-    </div>
-</div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="assets/js/script.js"></script>
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h1 class="display-3 text-light bg-dark text-center ">Weather Dashboard</h1>
+        </div>
+        <div class="row">
+            <div class="list-group col-2">
+                <button type="button" class="list-group-item list-group-item-action">Cras justo odio</button>
+                <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
+                <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
+                <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
+                <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at
+                    eros</button>
+            </div>
+            <div class="col-2 border border-secondary">
+                <h3>Current City Name</h3>
+                <p>Current city weather info</p>
+            </div>
+
+        </div>
+
+
+        <div class="row d-flex justify-content-end">
+            <div class="card bg-primary text-white" style="width: 10rem;">
+                <div class="card-body">
+                    <h5 class="card-title">date</h5>
+                    <p class="card-text">Would put the Weather info for tomorrow here</p>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 
 </html>
