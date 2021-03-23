@@ -15,32 +15,65 @@
             <h1 class="display-3 text-light bg-dark text-center ">Weather Dashboard</h1>
         </div>
         <div class="row">
-            <div class="list-group col-2">
-                <button type="button" class="list-group-item list-group-item-action">Cras justo odio</button>
-                <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
-                <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-                <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
-                <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at
-                    eros</button>
+
+            <div class="list-group col-2 p-3">
+                <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Search City">
+                <button type="submit" class="col-6 btn btn-primary mb-2">Submit</button>
+                <button type="button" class="list-group-item list-group-item-action">Previous Cities</button>
+                <button type="button" class="list-group-item list-group-item-action">Previous city</button>
+                <button type="button" class="list-group-item list-group-item-action">Previous city</button>
+                <button type="button" class="list-group-item list-group-item-action">Previous city</button>
+                <button type="button" class="list-group-item list-group-item-action">Previous city</button>
+                <button type="button" class="list-group-item list-group-item-action">Previous city</button>
             </div>
-            <div class="col-2 border border-secondary">
-                <h3>Current City Name</h3>
-                <p>Current city weather info</p>
-            </div>
-
-        </div>
-
-
-        <div class="row d-flex justify-content-end">
-            <div class="card bg-primary text-white" style="width: 10rem;">
-                <div class="card-body">
-                    <h5 class="card-title">date</h5>
-                    <p class="card-text">Would put the Weather info for tomorrow here</p>
+            <div class="row col-9">
+                <div class="border border-secondary text-start mb-4 m-2 p-2">
+                    <div id="currentCity" class="p-5 ms-3">
+                        <h3>Current City Name</h3>
+                        <p>Current city weather info</p>
+                        <br><br><br><br><br>
+                    </div>
                 </div>
-            </div>
-            
+                <div class="row d-flex justify-content-center m-3">
+                    <div class="card bg-primary text-white p-2 m-2" style="width: 10rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">date</h5>
+                            <p class="card-text">5 day forcast</p>
+                        </div>
+                    </div>
+                    <div class="card bg-primary text-white  p-2 m-2" style="width: 10rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">date</h5>
+                            <p class="card-text">5 day forcast</p>
+                        </div>
+                    </div>
+                    <div class="card bg-primary text-white  p-2 m-2" style="width: 10rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">date</h5>
+                            <p class="card-text">5 day forcast</p>
+                        </div>
+                    </div>
+                    <div class="card bg-primary text-white  p-2 m-2" style="width: 10rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">date</h5>
+                            <p class="card-text">5 day forcast</p>
+                        </div>
+                    </div>
+                    <div class="card bg-primary text-white  p-2 m-2" style="width: 10rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">date</h5>
+                            <p class="card-text">5 day forcast</p>
+                        </div>
+                    </div>
+                    
+                    
             </div>
         </div>
+
+
+
+        </div>
+    </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
