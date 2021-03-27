@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Weather Dashboard</title>
 </head>
 
@@ -16,22 +16,23 @@
         </div>
         <div class="row">
 
-            <div class="list-group col-2 p-3">
+            <div class="list-group col-3 p-3">
                 <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Search City">
                 <button type="submit" id="search-btn" class="col-6 btn btn-primary mb-2">Submit</button>
-                <button type="button" class="list-group-item list-group-item-action">Previous Cities</button>
+                <button type="button" class="hide list-group-item list-group-item-action">Previous Cities</button>
+                <!-- <button type="button" class="list-group-item list-group-item-action">Previous city</button>
                 <button type="button" class="list-group-item list-group-item-action">Previous city</button>
                 <button type="button" class="list-group-item list-group-item-action">Previous city</button>
                 <button type="button" class="list-group-item list-group-item-action">Previous city</button>
-                <button type="button" class="list-group-item list-group-item-action">Previous city</button>
-                <button type="button" class="list-group-item list-group-item-action">Previous city</button>
+                <button type="button" class="list-group-item list-group-item-action">Previous city</button> -->
             </div>
             <div class="row col-9">
-                <div class="border border-secondary text-start mb-4 m-2 p-2">
+                <div id="main" class="border border-secondary text-start mb-4 m-2 p-2">
+                    <h4 id="intro">Use the search on the left to get the weather</h4>
                     <div id="current-city" class="p-5 ms-3">
-                        <h3>Current City Name</h3>
-                        <p>Current city weather info</p>
-                        <br><br><br><br><br>
+                        <h4 class="d-inline font-weight-bold"></h4>
+                        <div class="d-inline"></div>
+
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center m-3">
@@ -76,8 +77,8 @@
     </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 

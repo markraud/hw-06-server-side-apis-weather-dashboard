@@ -4,21 +4,7 @@ $(document).ready(function () {
 
     var searchCityBtn = document.querySelector('#search-btn');
 
-    // function handleSearchFormSubmit(event) {
-    //     event.preventDefault();
-
-    //     var currentCity = document.querySelector('#inlineFormInput').value;
-    //     console.log(currentCity);
-
-    //     if (!currentCity) {
-    //       console.error('You need a search input value!');
-    //       return;
-    //     }
-
-    //     searchCity(currentCity);
-    //   }
-
-
+    
     searchCityBtn.addEventListener('click', function (event) {
         event.preventDefault();
         var temp;
@@ -28,6 +14,8 @@ $(document).ready(function () {
         var lat;
         var lon;
         var uvi;
+        var city;
+        var icon;
 
         var currentCity = document.querySelector('#inlineFormInput').value;
         console.log(currentCity);
@@ -41,17 +29,21 @@ $(document).ready(function () {
             })
             .then(function (data) {
                 console.log(data);
+                city = data.name;
                 temp = data.main.temp;
                 humidity = data.main.humidity;
                 windSpeed = data.wind.speed;
                 lat = data.coord.lat;
                 lon = data.coord.lon;
+                icon= data.weather[0].icon;
                 uvURL = "http://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=f1d7def2b5aef9f0636bcc751ef47a58";
                 console.log(temp);
                 console.log(humidity);
                 console.log(windSpeed);
                 console.log(lon);
                 console.log(lat);
+                console.log(city);
+                console.log(icon);
                 // $("#currentCity").html("<div>this is a test</div");
 
             })
@@ -61,12 +53,23 @@ $(document).ready(function () {
                         return res.json();
                     })
                     .then(function (data) {
+                        console.log(data);
                         uvi = data.value;
+                        console.log(uvi);
 
                     })
-                console.log(currentCity);
-                $("#current-city").html("<h3>" + currentCity + "</h3>");  //this isn't working for some reason
-                $("#current-city").html("<div>This is the temperature:" + temp + "</div");
+                // console.log(uvi);
+                $("#intro").hide();
+                //$("#intro").addClass("d-none")
+                $("#current-city").children().first().text(city);
+                var currentDate = moment();
+                $("#current-city").append("(" + currentDate.format('L') +")");
+                $("#current-city").append("<div class='y-1'>Temperature: " + temp + " ℉</div>");
+                $("#current-city").append("<div>Humidity: " + humidity + "</div>");
+                $("#current-city").append("<div>UV Index: " + uvi + "</div>");
+
+
+
             });
     });
 
