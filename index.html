@@ -9,7 +9,7 @@
     <title>Weather Dashboard</title>
 </head>
 
-<body>
+<body class="font-family-base font-size-base line-height-base">
     <div class="container-fluid">
         <div class="jumbotron">
             <h1 class="display-3 text-light bg-dark text-center ">Weather Dashboard</h1>
@@ -19,21 +19,18 @@
             <div class="list-group col-3 p-3">
                 <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Search City">
                 <button type="submit" id="search-btn" class="col-6 btn btn-primary mb-2">Submit</button>
-                <button type="button" class="hide list-group-item list-group-item-action">Previous Cities</button>
+                <button type="button" class="list-group-item list-group-item-action">Previous Cities</button>
                 <!-- <button type="button" class="list-group-item list-group-item-action">Previous city</button>
                 <button type="button" class="list-group-item list-group-item-action">Previous city</button>
                 <button type="button" class="list-group-item list-group-item-action">Previous city</button>
                 <button type="button" class="list-group-item list-group-item-action">Previous city</button>
                 <button type="button" class="list-group-item list-group-item-action">Previous city</button> -->
             </div>
-            <div class="row col-9">
-                <div id="main" class="border border-secondary text-start mb-4 m-2 p-2">
-                    <h4 id="intro">Use the search on the left to get the weather</h4>
-                    <div id="current-city" class="p-5 ms-3">
-                        <h4 class="d-inline font-weight-bold"></h4>
-                        <div class="d-inline"></div>
-
-                    </div>
+            <div class="row col-9 d-flex">
+                <div id="main" class="border border-secondary text-start mb-2 m-2 p-2">
+                    <h4 id="intro" class="font-weight-light align-content-start">Use the search on the left to get the weather</h4>
+                    <div id="current-city" class=""></div>
+                    <!-- <div id="uv-index" class="text-start d-inline"></div> -->
                 </div>
                 <div class="row d-flex justify-content-center m-3">
                     <div class="card bg-primary text-white p-2 m-2" style="width: 10rem;">

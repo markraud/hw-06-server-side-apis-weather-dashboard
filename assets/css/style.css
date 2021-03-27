@@ -1,12 +1,14 @@
 #main {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
-    min-width: 100%;
-    min-height: auto;
+    align-items: baseline;
+    min-width: 90%;
+    min-height: 50%;
 }
 
 #search-btn {
     max-width: 50%;
-    max-height: 8%;
+    max-height: 10%;
+    min-width: fit-content;
+    min-height: max-content;
 }
