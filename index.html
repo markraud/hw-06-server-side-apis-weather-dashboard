@@ -14,13 +14,14 @@
         <div class="jumbotron">
             <h1 class="display-3 text-light bg-dark text-center ">Weather Dashboard</h1>
         </div>
-        <div class="row">
+        <div class="row d-flex">
 
             <div class="list-group col-3 p-3">
                 <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Search City">
                 <button type="button" id="search-btn" class="btn-primary btn-sm mb-2">Search</button>
-                <button type="button" class="list-group-item list-group-item-action">Previous Cities</button>
-                <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
+                <button id="prev-cities" type="button" class="list-group-item list-group-item-action">Previous Cities</button>
+
+                <!-- <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button> -->
                 <!-- <button type="button" class="list-group-item list-group-item-action">Previous city</button>
                 <button type="button" class="list-group-item list-group-item-action">Previous city</button>
                 <button type="button" class="list-group-item list-group-item-action">Previous city</button>
@@ -29,15 +30,14 @@
             </div>
             <div class="col-1" name="blank-space"></div>
             <div class="row col-8 d-flex ml-1">
-                <div id="main" class="border border-secondary text-start mb-2 m-2 p-2">
-                    <div id="intro" class="h6 font-weight-light align-content-start">Use the search on the left to get the weather</div>
+                <div id="main" class="text-start mb-2 m-2 p-2">
                     <div id="current-city" class=""></div>
                 </div>
 
                 
             </div>
         </div>
-        <div class="row d-flex justify-content-center m-3">
+        <div class="row d-flex ml-5">
             <div id="forcastTitle" class="row col-12 h4 d-none">5-Day Forecast: </div>
             <div id="forecastInfo" class="col-12 d-inline-flex"></div>
 
