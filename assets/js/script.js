@@ -82,6 +82,7 @@ $(document).ready(function () {
                         // console.log('recieved data', x2);
                         forcast="";
                         $.each(data.list, function(index, val) {
+                            // grab forcast objects in data.list for hour = 12 so we get 1 forcast per day
                             if (((val.dt_txt.split(' '))[1]) === '12:00:00' ) {
                                 //format the date to Gregorian style
                                 forecastDate = val.dt_txt.split(' ')[0];
@@ -89,33 +90,20 @@ $(document).ready(function () {
                                 gregDate = forecastDate[1] + "-" + forecastDate[2] + "-" + forecastDate[0];
                                 console.log(gregDate);
                                 // inject forcast to html
-                                forcast += "<p>" // Opening paragraph tag
-                                forcast += "<b>" + gregDate + "</b>: " // Day
-                                forcast += val.main.temp + "&degF" // Temperature
-                                forcast += val.main.humidity + "%" // humidity
-                                forcast += "<img src='https://openweathermap.org/img/w/" + val.weather[0].icon + ".png'>" // Icon
-                                forcast += "<span> | " + val.weather[0].description + "</span>"; // Description
-                                forcast += "</p>" // Closing paragraph tag
-                                $("#forecastTitle").html(forcast);
+                                forcast += "<div class='card bg-primary text-white p-2 m-2' style='width: 10rem;>" // Open div for card tag
+                                forcast += "<div class='card-body'>"
+                                forcast += "<h6 class='card-title'>" + gregDate + "</h6>" 
+                                forcast += "<img src='https://openweathermap.org/img/w/" + val.weather[0].icon + ".png'>"
+                                forcast += "<div>Temp: " + val.main.temp + " ℉ </div>"
+                                forcast += "<div>Humidity: " + val.main.humidity + " %</div>"
+                                forcast += "</div>"    // close card body
+                                forcast += "</div>" // Close div for card tag
+                                $('#forcastTitle').removeClass('d-none');
+                                $("#forecastInfo").html(forcast);
                             }
                           });
                         //console.log(data.list);
                         //console.log(forcast);
-                        
-                        // console.log(data.list[1].main.temp);  // I need to finish this and grab all the data needed
-                        // var day1 = moment().add(1, 'days').format('L');
-                        // var day2 = moment().add(2, 'days').format('L');
-                        // var day3 = moment().add(3, 'days').format('L');
-                        // var day4 = moment().add(4, 'days').format('L');
-                        // var day5 = moment().add(5, 'days').format('L');
-                        // console.log(day1);
-                        // //var icon1 = 
-                        // console.log(day2);
-                        // console.log(day3);
-                        // console.log(day4);
-                        // console.log(day5);
-                        // console.log(day6);
-                        
                         
                         // $("#forecastTitle").append(`<div class='card bg-primary text-white p-2 m-2' style='width: 10rem;'>
                         //                                 <div class='card-body'>
