@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,7 +7,6 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Weather Dashboard</title>
 </head>
-
 <body class="font-family-base font-size-base line-height-base">
     <div class="container-fluid">
         <div class="jumbotron">
@@ -20,36 +18,22 @@
                 <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Search City">
                 <button type="button" id="search-btn" class="btn-primary btn-sm mb-2">Search</button>
                 <button id="prev-cities" type="button" class="list-group-item list-group-item-action">Previous Cities</button>
-
-                <!-- <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button> -->
-                <!-- <button type="button" class="list-group-item list-group-item-action">Previous city</button>
-                <button type="button" class="list-group-item list-group-item-action">Previous city</button>
-                <button type="button" class="list-group-item list-group-item-action">Previous city</button>
-                <button type="button" class="list-group-item list-group-item-action">Previous city</button>
-                <button type="button" class="list-group-item list-group-item-action">Previous city</button> -->
             </div>
             <div class="col-1" name="blank-space"></div>
             <div class="row col-8 d-flex ml-1">
                 <div id="main" class="text-start mb-2 m-2 p-2">
                     <div id="current-city" class=""></div>
                 </div>
-
-                
             </div>
         </div>
         <div class="row d-flex ml-5">
             <div id="forcastTitle" class="row col-12 h4 d-none">5-Day Forecast: </div>
             <div id="forecastInfo" class="col-12 d-inline-flex"></div>
-
-
-
         </div>
     </div>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
-
 </html>
