@@ -20,7 +20,7 @@ $(document).ready(function () {
         var icon = '';
         var localStorCity = '';
         var currentCity = document.querySelector('#inlineFormInput').value;
-        var openWeatherURL = "http://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&units=imperial&APPID=f1d7def2b5aef9f0636bcc751ef47a58";
+        var openWeatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&units=imperial&APPID=f1d7def2b5aef9f0636bcc751ef47a58";
         //console.log(openWeatherURL);
         var uvUrl = '';
         var forecastUrl = '';
@@ -40,9 +40,9 @@ $(document).ready(function () {
                 lat = data.coord.lat;
                 lon = data.coord.lon;
                 icon = data.weather[0].icon;
-                uvUrl = "http://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=f1d7def2b5aef9f0636bcc751ef47a58";
-                forecastUrl = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=f1d7def2b5aef9f0636bcc751ef47a58";
-                iconUrl = "http://openweathermap.org/img/w/" + icon + ".png";
+                uvUrl = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=f1d7def2b5aef9f0636bcc751ef47a58";
+                forecastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=f1d7def2b5aef9f0636bcc751ef47a58";
+                iconUrl = "https://openweathermap.org/img/w/" + icon + ".png";
                 localStorage.setItem("city", city);
                 $("#intro").hide();
                 $("#main").addClass("border border-secondary")
