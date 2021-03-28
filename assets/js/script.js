@@ -19,7 +19,7 @@ $(document).ready(function () {
 
         var currentCity = document.querySelector('#inlineFormInput').value;
         var openWeatherURL = "http://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&units=imperial&APPID=f1d7def2b5aef9f0636bcc751ef47a58";
-        console.log(openWeatherURL);
+        //console.log(openWeatherURL);
         var uvUrl ='';
         var forecastUrl ='';
         var iconUrl ='';
@@ -71,20 +71,45 @@ $(document).ready(function () {
                     })
             })
             .then(function () { // another fetch to get the 5 day forcast
-                console.log(forecastUrl);
+                //console.log(forecastUrl);
                 fetch(forecastUrl)
                     .then(function (res){
                         return res.json();
                     })
                     .then(function (data) {
+                        // var x = data.list[2].dt_txt
+                        // var x2 = x.split(' ');
+                        // console.log('recieved data', x2);
+                        forcast="";
+                        $.each(data.list, function(index, val) {
+                            if (((val.dt_txt.split(' '))[1]) === '12:00:00' ) {
+                                //format the date to Gregorian style
+                                forecastDate = val.dt_txt.split(' ')[0];
+                                forecastDate = (forecastDate.split("-"));
+                                gregDate = forecastDate[1] + "-" + forecastDate[2] + "-" + forecastDate[0];
+                                console.log(gregDate);
+                                // inject forcast to html
+                                forcast += "<p>" // Opening paragraph tag
+                                forcast += "<b>" + gregDate + "</b>: " // Day
+                                forcast += val.main.temp + "&degF" // Temperature
+                                forcast += val.main.humidity + "%" // humidity
+                                forcast += "<img src='https://openweathermap.org/img/w/" + val.weather[0].icon + ".png'>" // Icon
+                                forcast += "<span> | " + val.weather[0].description + "</span>"; // Description
+                                forcast += "</p>" // Closing paragraph tag
+                                $("#forecastTitle").html(forcast);
+                            }
+                          });
                         //console.log(data.list);
+                        //console.log(forcast);
+                        
                         // console.log(data.list[1].main.temp);  // I need to finish this and grab all the data needed
-                        var day1 = moment().add(1, 'days').format('L');
-                        var day2 = moment().add(2, 'days').format('L');
-                        var day3 = moment().add(3, 'days').format('L');
-                        var day4 = moment().add(4, 'days').format('L');
-                        var day5 = moment().add(5, 'days').format('L');
-                        //var icon1 = 
+                        // var day1 = moment().add(1, 'days').format('L');
+                        // var day2 = moment().add(2, 'days').format('L');
+                        // var day3 = moment().add(3, 'days').format('L');
+                        // var day4 = moment().add(4, 'days').format('L');
+                        // var day5 = moment().add(5, 'days').format('L');
+                        // console.log(day1);
+                        // //var icon1 = 
                         // console.log(day2);
                         // console.log(day3);
                         // console.log(day4);
@@ -92,15 +117,15 @@ $(document).ready(function () {
                         // console.log(day6);
                         
                         
-                        $("#forecastTitle").append(`<div class='card bg-primary text-white p-2 m-2' style='width: 10rem;'>
-                                                        <div class='card-body'>
-                                                            <h6 id='day-2' class='card-title'></h6>
-                                                        </div>
-                                                    </div>`);
-                        $("#day-2").append(day2);
-                        $("#day-2").append();   // append icon
-                        $("#day-2").append();   // append temp
-                        $("#day-2").append();   // append humidity
+                        // $("#forecastTitle").append(`<div class='card bg-primary text-white p-2 m-2' style='width: 10rem;'>
+                        //                                 <div class='card-body'>
+                        //                                     <h6 id='day-2' class='card-title'></h6>
+                        //                                 </div>
+                        //                             </div>`);
+                        // $("#day-2").append(day2);
+                        // $("#day-2").append();   // append icon
+                        // $("#day-2").append();   // append temp
+                        // $("#day-2").append();   // append humidity
 
 
 
