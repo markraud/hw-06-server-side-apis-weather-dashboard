@@ -24,7 +24,7 @@ The website is built using the following:
 
 #### Screenshots of the Weather Dashboard:
 
-![Weather Dashboard Screenshot](assets/images/Screenshot-weather-dashboard.jpg "Weather Dashboard Screenshot")
+![Weather Dashboard Screenshot](images/Screenshot-weather-dashboard.jpg "Weather Dashboard Screenshot")
 
 
 
