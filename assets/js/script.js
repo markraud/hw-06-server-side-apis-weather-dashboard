@@ -3,6 +3,8 @@ $(document).ready(function () {
     console.log("ready!");
 
     var searchCityBtn = document.querySelector('#search-btn');
+    
+    var prevCity = "";
 
     function getWeather() {
         event.preventDefault();
@@ -54,7 +56,13 @@ $(document).ready(function () {
                 $("#current-city").append("<div class='p-2 m-2'>Humidity: " + humidity + "%</div>");
                 $("#current-city").append("<div class='p-2 m-2'>Wind Speed: " + windSpeed + " MPH</div>");
                 localStorCity = localStorage.getItem("city");
-                $("#prev-cities").append('<button onclick="searchPrev();" type="button" class="list-group-item list-group-item-action">' + localStorCity + '</button>')
+                $("#prev-cities").append('<button type="button" class="prev-search list-group-item list-group-item-action">' + localStorCity + '</button>')
+                //prevCity += .($(".prev-search").text());
+                // var previousCityBtn = document.querySelector('.prev-search');
+                // previousCityBtn.addEventListener("click", function () {
+                //     console.log('you clicked prev button');
+                // })
+                
 
             })
             .then(function () {
@@ -64,7 +72,19 @@ $(document).ready(function () {
                     })
                     .then(function (data) {
                         uvi = data.value;
-                        $("#current-city").append("<div class='p-2 m-2'>UV Index: " + uvi + "</div>");
+                        $("#current-city").append("<div class='p-2 m-2'>UV Index: <span id='uv-rate'>" + uvi + "</span></div>");
+                        //  make the UV index change colors for favorable(green), moderate(yellow) or severe(red) conditions
+                        if (uvi < 2) {
+                            console.log("favorable");
+                            $("#uv-rate").addClass('bg-success');
+                        } else if (uvi < 5) {
+                            console.log("moderate");
+                            $("#uv-rate").addClass('bg-warning');
+                        } else {
+                            console.log("severe");
+                            $("#uv-rate").addClass('bg-danger');
+                        } return;
+                    
                     })
             })
             .then(function () { // another fetch to get the 5 day forcast
@@ -97,15 +117,15 @@ $(document).ready(function () {
                             }
                         });
 
+                        
                     })
             })
         $("#inlineFormInput").val("");  // clear out the search input
     }
+        
     searchCityBtn.addEventListener("click", function () {
         getWeather();
+
     });
-    // TO DO:  
-    // create a function to grab previous cities from local storage
-    // make UV index display background color
-    // figure out if you can limit previous cities or move over the forcast if the list gets large
+    
 });
