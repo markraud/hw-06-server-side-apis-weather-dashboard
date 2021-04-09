@@ -26,7 +26,14 @@ The website is built using the following:
 
 ![Weather Dashboard Screenshot](images/Screenshot-weather-dashboard.jpg "Weather Dashboard Screenshot")
 
+#### License:
+Built by Mark Raudenbush
+markraud@hotmail.com
+- [My LinkedIn](https://www.linkedin.com/in/markraudenbush)
+- [My GitHub](https://github.com/markraud?tab=stars)
 
+#### License:
+The MIT License (MIT)
 
 #### Summary:
 This taught me about accessing server side APIs using fetch, parsing JSON data and injecting it into HTML.  It also was good practive in traversing and manipulating the DOM using jQuery.  
