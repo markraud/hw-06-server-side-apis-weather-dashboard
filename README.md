@@ -26,7 +26,7 @@ The website is built using the following:
 
 ![Weather Dashboard Screenshot](images/Screenshot-weather-dashboard.jpg "Weather Dashboard Screenshot")
 
-#### License:
+#### Contact Info:
 Built by Mark Raudenbush
 markraud@hotmail.com
 - [My LinkedIn](https://www.linkedin.com/in/markraudenbush)
