@@ -30,7 +30,7 @@ The website is built using the following:
 Built by Mark Raudenbush
 markraud@hotmail.com
 - [My LinkedIn](https://www.linkedin.com/in/markraudenbush)
-- [My GitHub](https://github.com/markraud?tab=stars)
+- [My GitHub](https://github.com/markraud)
 
 #### License:
 The MIT License (MIT)
